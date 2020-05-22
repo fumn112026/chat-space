@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## userテーブル
+## user table
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
@@ -31,9 +31,10 @@ Things you may want to cover:
 
 ### Association
 - has_many :posts
-- has_many :groups_users
+- has_many :groups, through: members
+- has_many :members
 
-## postテーブル
+## post table
 |Column|Type|Option|
 |------|----|------|
 |text|text|null: false|
@@ -44,17 +45,17 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## group table
 |Column|Type|Option|
 |------|----|------|
 |name|string|null: false|
 
 ### Association
 - has_many :posts
-- has_many :groups_users
+- has_many :members
+- has_many :users, through: members
 
-## groups_usersテーブル
-
+## members table
 |Column|Type|Option|
 |------|----|------|
 |user_id|integer|null: false, foreign_key: true|
