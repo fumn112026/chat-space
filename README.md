@@ -31,7 +31,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :posts
-- has_many :groups, through: members
+- has_many :groups, through: :members
 - has_many :members
 
 ## post table
@@ -54,7 +54,7 @@ Things you may want to cover:
 ### Association
 - has_many :posts
 - has_many :members
-- has_many :users, through: members
+- has_many :users, through: :members
 
 ## members table
 |Column|Type|Option|
