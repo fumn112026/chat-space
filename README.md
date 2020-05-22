@@ -37,8 +37,8 @@ Things you may want to cover:
 ## post table
 |Column|Type|Option|
 |------|----|------|
-|text|text|null|
-|image|text|null|
+|text|text|
+|image|text|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
