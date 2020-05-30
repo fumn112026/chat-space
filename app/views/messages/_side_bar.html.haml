@@ -1,27 +1,20 @@
 .side-bar
   .side-bar__header
     .side-bar__header__box
-      .side-bar__header__box__name tomo
+      .side-bar__header__box__name
+        = current_user.name
       %ul.header__lists
         %li.list
-          = link_to "#" do
+          = link_to new_group_path do
             %i.fas.fa-edit
         %li.list
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             %i.fas.fa-cog
   .side-bar_group-list
-    .group
-      .group__name
-        teckcamp
-      .group__text
-        まだメッセージがありません
-    .group
-      .group__name
-        teckexpert
-      .group__text
-        まだメッセージがありません
-    .group
-      .group__name
-        teckblog
-      .group__text
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#', class: "link" do
+          .group__name
+            = group.name
+          .group__text
+            メッセージはまだありません。
